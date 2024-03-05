@@ -1,0 +1,64 @@
+
+\documentclass[a4paper, 14pt]{scrartcl}
+
+\usepackage{amsmath, amssymb}
+\usepackage{paracol}
+\DeclareMathOperator{\cmmdc}{cmmdc}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\arcctg}{arcctg}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccoth}{arccoth}
+
+\begin{document}
+\noindent 
+\( 
+\cmmdc(54329, 12347) = ? \\ 
+x_{54329} = (1, 0) 
+ \\ 
+x_{12347} = (0, 1) 
+\) 
+ \\ 
+\begin{paracol}{2}
+\( 
+54329 = 12347 \cdot 4 + 4941
+\) 
+\switchcolumn
+\( 
+\Rightarrow x_{4941} = x_{54329} -4 \cdot x_{12347} = (1, -4)
+\) 
+\end{paracol} 
+\begin{paracol}{2}
+\( 
+12347 = 4941 \cdot 2 + 2465
+\) 
+\switchcolumn
+\( 
+\Rightarrow x_{2465} = x_{12347} -2 \cdot x_{4941} = (-2, 9)
+\) 
+\end{paracol} 
+\begin{paracol}{2}
+\( 
+4941 = 2465 \cdot 2 + 11
+\) 
+\switchcolumn
+\( 
+\Rightarrow x_{11} = x_{4941} -2 \cdot x_{2465} = (5, -22)
+\) 
+\end{paracol} 
+\begin{paracol}{2}
+\( 
+2465 = 11 \cdot 224 + 1
+\) 
+\switchcolumn
+\( 
+\Rightarrow x_{1} = x_{2465} -224 \cdot x_{11} = (-1122, 4937)
+\) 
+\end{paracol} 
+\[ 
+1 = 54329 \cdot \underline{(-1122)} + 12347 \cdot \underline{4937} 
+\] 
+
+\end{document}
