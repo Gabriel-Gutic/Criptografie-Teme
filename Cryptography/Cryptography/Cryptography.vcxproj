@@ -152,6 +152,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Prime.cpp" />
     <ClCompile Include="src\Tests\IntegerDivisionTest.cpp" />
     <ClCompile Include="src\Tests\SqrtTest.cpp" />
     <ClCompile Include="src\Tests\Test.cpp" />
@@ -159,7 +160,9 @@
   <ItemGroup>
     <ClInclude Include="src\IMath.h" />
     <ClInclude Include="src\Integer.h" />
+    <ClInclude Include="src\Laborator.h" />
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\Prime.h" />
     <ClInclude Include="src\Tests\IntegerDivisionTest.h" />
     <ClInclude Include="src\Tests\SqrtTest.h" />
     <ClInclude Include="src\Tests\Test.h" />

@@ -22,11 +22,13 @@ public:
 	std::string ToString() const;
 	Integer Abs() const;
 	Integer Sqrt() const;
+	Integer Log2() const;
+	Integer Log10() const;
 	Integer MultiplyByPower10(int power) const;
 
-	static Integer Pow(Integer n, Integer p);
+	static Integer Pow(const Integer& n, const Integer& p);
 	// a ^ b (mod n)
-	static Integer Pow(Integer a, Integer b, Integer n); 
+	static Integer Pow(const Integer& a, const Integer& b, const Integer& n);
 
 	Integer operator-() const;
 	friend Integer operator+(const Integer& a, const Integer& b);
@@ -42,6 +44,10 @@ public:
 	Integer& operator*=(const Integer& a);
 	Integer& operator/=(const Integer& a);
 	Integer& operator%=(const Integer& a);
+	Integer& operator++();
+	Integer operator++(int);
+	Integer& operator--();
+	Integer operator--(int);
 
 	friend bool operator==(const Integer& a, const Integer& b);
 	friend bool operator!=(const Integer& a, const Integer& b);

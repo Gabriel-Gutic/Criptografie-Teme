@@ -121,6 +121,29 @@ Integer Integer::Sqrt() const
 	return left;
 }
 
+Integer Integer::Log2() const
+{
+	if (*this <= 0)
+		return Integer::Nan;
+
+	Integer i = 0;
+	Integer n = 1;
+	while (true)
+	{
+		n = n * 2;
+		if (n > *this)
+			return i;
+		i++;
+	}
+}
+
+Integer Integer::Log10() const
+{
+	if (*this <= 0)
+		return Integer::Nan;
+	return m_Digits.size() - 1;
+}
+
 Integer Integer::MultiplyByPower10(int power) const
 {
 	if (*this == 0)
@@ -135,6 +158,51 @@ Integer Integer::MultiplyByPower10(int power) const
 	}
 
 	return result;
+}
+
+Integer Integer::Pow(const Integer& n, const Integer& p)
+{
+	if (p < 0)
+	{
+		return Integer::Nan;
+	}
+
+	Integer result = 1;
+	Integer x = n, y = p;
+
+	while (y > 0)
+	{
+		if (y % 2 == 1)
+		{
+			result *= x;
+		}
+		x *= x;
+		y /= 2;
+	}
+	return result;
+}
+
+Integer Integer::Pow(const Integer& a, const Integer& b, const Integer& n)
+{
+	if (n <= 1 || b < 0)
+	{
+		return Integer::Nan;
+	}
+
+	Integer p = 1;
+	Integer x = a, y = b;
+
+	x = x % n;
+	while (y > 0)
+	{
+		if (y % 2 == 1)
+		{
+			p = (p * x) % n;
+		}
+		x = (x * x) % n;
+		y /= 2;
+	}
+	return p;
 }
 
 Integer Integer::operator-() const
@@ -172,6 +240,32 @@ Integer& Integer::operator%=(const Integer& a)
 {
 	*this = *this % a;
 	return *this;
+}
+
+Integer& Integer::operator++()
+{
+	*this += 1;
+	return *this;
+}
+
+Integer Integer::operator++(int)
+{
+	Integer copy = *this;
+	++*this;
+	return copy;
+}
+
+Integer& Integer::operator--()
+{
+	*this -= 1;
+	return *this;
+}
+
+Integer Integer::operator--(int)
+{
+	Integer copy = *this;
+	--*this;
+	return copy;
 }
 
 Integer operator+(const Integer& a, const Integer& b)
