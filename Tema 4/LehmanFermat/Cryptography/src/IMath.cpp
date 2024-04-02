@@ -97,3 +97,25 @@ int IMath::Jacobi(const Integer& b, const Integer& p)
 		}
 	}
 }
+
+Integer* IMath::LehmanFermat(const Integer& n)
+{
+	Integer* result = new (std::nothrow) Integer[2];
+	if (!result)
+		return nullptr;
+
+	Integer sqrt = n.Sqrt();
+	for (Integer t = sqrt + 1; t < n; t++)
+	{
+		Integer diff = t * t - n;
+		Integer s = diff.Sqrt();
+		if (s * s == diff)
+		{
+			result[0] = t - s;
+			result[1] = t + s;
+			return result;
+		}
+	}
+
+	return nullptr;
+}

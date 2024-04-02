@@ -9,4 +9,6 @@ public:
 	static int BitCount(long long n);
 	static Integer Cmmdc(const Integer& a, const Integer& b);
 	static int Jacobi(const Integer& b, const Integer& p);
+
+	static Integer* LehmanFermat(const Integer& n);
 };

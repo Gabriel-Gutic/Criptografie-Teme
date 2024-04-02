@@ -74,14 +74,6 @@ std::string Integer::ToString() const
 		ss << (int)m_Digits[i];
 	}
 	return ss.str();
-	// 1 2 4 5 3 6
-
-	// pos 4
-
-	// 1 2 4
-	// 5 3 6
-
-	// pos 1, 1
 }
 
 Integer Integer::Abs() const
